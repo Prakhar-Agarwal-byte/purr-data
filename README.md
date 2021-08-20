@@ -55,37 +55,40 @@ Pd-L2ork” menu option.
 
 ## GSoC Contributions
 Here is a list of important PRs and commits made for GSoC:
-View all my merge requests here
-● (#807) Fixed padding of marks in console find
-● (#806) Fixed loading modal getting stuck
-● (#805) Removed Web MIDI error alert on startup
-● (#804) Fixed console head layout
-● (#803) Changed shortcut keys fir Edit mode and Cut
-● (#802) Removed full screen option
-● (#793) Improved preferences layout
-● (#800) Fix shortcut when creating objects
-● (#790) Improved properties layout
-● (#784) Improved scrollbar appearance
-● (#789) Added dialog for sending messages
-● (#788) Added rearrangeable canvas
-● (#787) Added close button in canvas
-● (#785) Shortcuts work depending on the device platform
-● (#783) Remove view menu option from global menu
-● (#779) Added open only supported file type features
-● (#773) Implemented tooltip feature
-● (#770) Added copy feature in console
-● (#767) Added traversing feature to console find
-● (#765) Fixed app stalling on clicking “About Pd-L2ork”
-● (#786) Added rename and delete files feature
-● (#741) Added full screen feature
-● (#758, #759, #760) Added default browser zoom in, zoom out, zoom reset
-● (#713) Fixed all matches showing when “Highlight All” is not selected
-● (#730) Improved animation of rotate icon
-● (#712, #711) Added round borders and shadows to menus.
-● (#720) Fixed scroll bug in Firefox
-● (#680) Added truncate file name feature
-● (#669) Added separate scrolling of each canvas
-● and many more… 
+
+View all my merge requests [here](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests?scope=all&state=all&author_username=prakhar)
+
+- ([#807](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/807)) Fixed padding of marks in console find
+- ([#806](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/806)) Fixed loading modal getting stuck
+- ([#805](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/805)) Removed Web MIDI error alert on startup
+- ([#804](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/804)) Fixed console head layout
+- ([#803](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/803)) Changed shortcut keys fir Edit mode and Cut
+- ([#802](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/802)) Removed full screen option
+-	([#793](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/793)) Improved preferences layout
+-	([#800](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/800)) Fix shortcut when creating objects
+-	([#790](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/790)) Improved properties layout
+-	([#784](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/784)) Improved scrollbar appearance
+-	([#789](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/789)) Added dialog for sending messages
+-	([#788](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/788)) Added rearrangeable canvas
+-	([#787](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/787)) Added close button in canvas
+-	([#785](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/785)) Shortcuts work depending on the device platform
+-	([#783](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/783)) Remove view menu option from global menu
+-	([#779](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/779)) Added open only supported file type features
+-	([#773](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/773)) Implemented tooltip feature
+-	([#770](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/770)) Added copy feature in console
+-	([#767](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/767)) Added traversing feature to console find
+-	([#765](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/765)) Fixed app stalling on clicking “About Pd-L2ork”
+-	([#786](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/786)) Added rename and delete files feature
+-	([#741](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/741)) Added full screen feature
+-	([#758](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/758), [#759](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/759), [#760](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/760)) Added default browser zoom in, zoom out, zoom reset
+-	([#713](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/713)) Fixed all matches showing when “Highlight All” is not selected
+-	([#730](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/730)) Improved animation of rotate icon
+-	([#712](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/712), [#711](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/711)) Added round borders and shadows to menus.
+-	([#720](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/720)) Fixed scroll bug in Firefox
+-	([#680](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/680)) Added truncate file name feature
+-	([#669](https://git.purrdata.net/jwilkes/purr-data/-/merge_requests/669)) Added separate scrolling of each canvas
+-	and many more…😀
+ 
 
 ## Setup
 
@@ -131,22 +134,16 @@ make emscripten
 - utils: Common functions used for this project.
 
 ## Future Work
-- Fix shortcuts so they can work identically in browsers as the native Purr Data.
-- Fix getting stuck in the loading screen until a mouse/key event is triggered in Firefox/Safari.
-- Fix the patch not responding to mouse event after the help file is opened and not being clicked.
-- Fix wrong mouse coordinate issue that happens in some circumstances.
-- Fix or disable some of the global menu items not working.
-- Fix graphical arrays being opened if the patch font size changes. 
-- Ask for saving the patch when the user closes an edited patch.
-- Make the GUI(e.g. bang, toggle) property dialog window work.
-- Make the dialog windows(e.g. property, text) appear on the right side of the patch instead of the left sidebar.
-- Merge the patch menu into the global menu and make it work depending on the focus of patches.
-- Style the patch window menu bar so it can show the focus state and add some buttons (e.g. close) for convenience.
-- Make the patch window resizable by dragging its border.
-- Make the patch window rearrangeable by dragging its menu bar.
-- Improve the file manager so the files/folders can be added/renamed/deleted.
+- Fix graphical arrays being opened if the patch font size changes.
+- Make the work storable and shareable among users.
+- Merge global menu bar with canvas menu bar.
+- Fix help browser not working in web app.
 - Clean the frontend codebase and organize the file system.
-- Make the work storable and shareable between users.
+- Make the patch window resizable.
+- Display the web app inline in an HTML document.
+- Improve usability and interface of the web app more so to make it more intuitive.
+- Add a testing protocol for front end.
+- Continue working on issues and solving bugs to make Purr Data stable and easier to use.
 
 ## Reporting Bugs
 If you find any bugs, please let us know. You can contact using the [mailing list](http://disis.music.vt.edu/listinfo/l2ork-dev) or create an [issue](https://git.purrdata.net/jwilkes/purr-data/-/issues).
