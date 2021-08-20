@@ -1,0 +1,18 @@
+# ignore all those dependencies
+node_modules
+
+# ignore weird mac files
+.DS_Store
+
+# ignore binary files
+main.data
+main.html
+main.js
+main.wasm
+
+# ignore copied files
+components/dialogs/dialog_*.html
+css/*.css
+
+# ignore build files
+dist/
