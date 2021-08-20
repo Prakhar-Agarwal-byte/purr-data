@@ -3,15 +3,15 @@
 
 ## Table of Contents
 - [Overview](#overview)
-- [Developers](#developers)
-- [Accomplished Milestones](#accomplished-milestones)
+- [Work Done](#work-done)
+- [GSoC Contributions](#gsoc-contributions)
 - [Setup](#setup)
 - [Directory Structure](#directory-structure)
 - [Future Work](#future-work)
 - [Reporting Bugs](#reporting-bugs)
 
 ## Overview
-This document describes the work that was done under [Google Summer of Code 2020](https://summerofcode.withgoogle.com/) a.k.a. GSoC for organization Purr Data. The project idea was to make the native Purr Data run in a web browser by adding a WebAssembly target and HTML5 GUI framework.
+This document describes the work that was done under [Google Summer of Code 2021](https://summerofcode.withgoogle.com/) a.k.a. GSoC for organization Purr Data. The goal of this project was to make the Purr Data web app more usable, stable and reliable.
 
 **Purr Data** a.k.a. **Pd-l2ork 2** is an improved version of Miller Puckette’s Pd.
 
@@ -19,22 +19,73 @@ This document describes the work that was done under [Google Summer of Code 2020
 
 [Purr Data](https://agraef.github.io/purr-data/) serves the same purpose, but offers a new and much improved graphical user interface and includes many 3rd party plug-ins. Like Pd, it runs on Linux, macOS and Windows, and is open-source throughout.
 
-The goal of this project is to make the graphical programming environment Purr Data run in a web browser so it can be more accessible to users.
-
 You can try the latest version from https://purrdata.glitch.me/
 
-## Developers
-- The backend part of the software has been mainly done by Zack Lee (cuinjune@gmail.com)
-- The frontend part of the software has been mainly done by Hugo Carvalho (hugonvsc@gmail.com)
+## Work Done
+### - Making shortcuts work depending on the device platform (macOS, Windows, Linux)
+Made the shortcuts on the web app work the same way as on the desktop app depending upon
+the device platform. Some shortcuts were reserved by the browser so alternate shortcut keys
+were assigned to them in web app.
 
-## Accomplished Milestones
-- Modified the native Purr Data and libpd codebase to make them compatible with [Emscripten](https://emscripten.org/). (Zack)
-- Modified and created Makefile to build for Emscripten and to generate WebAssembly(`.wasm`) binaries for external libraries. (Zack)
-- Cleaned the backend codebase and organized the file system so the project can be easily maintained. (Zack)
-- Modified the existing NW.js based source code to make them compatible with web browsers. (Hugo)
-- Reimplemented some elements(menu, canvas, style) specifically for the web browser. (Hugo)
-- Integrated the backend with the frontend. (Hugo, Zack)
-- Fixed some major bugs and errors in the frontend. (Hugo, Zack)
+Fixed shortcuts when creating objects
+### - Improving the file manager so files/folders can be added/renamed/deleted
+Added the renaming and deleting of files feature, so that user can conveniently do these
+operations directly from the files list in the sidebar.
+### - Improving the layout of menu and patch windows for better user experience
+Made the canvases rearrangeable by dragging its top bar, added close button in canvas itself,
+improved scrollbar appearance, replaced the view options from global menu bar with shortcut
+keys. Added spinning refresh icon to file list and improved console, sidebar animation, added
+separate scrolling of each canvas.
+
+Sidebar shows when appropriate action is performed. Added shadows and round borders to
+menus. Fixed menu hiding behind other elements and not closing on mouse click. Added copy
+feature in console, implemented tooltip feature.
+
+Added traversing feature to console search matches and improved marks by changing the
+highlight all mark colors, padding. Added open only supported file type feature.
+### - Fixing many small bugs to make the app more stable and usable
+Redesigned Preferences, Properties, Array options, etc. to show in separate dialogs instead of
+sidebar. Also added dialog for sending messages to Pd/Canvas. Removed Web MIDI error alert
+on startup in unsupported browsers.
+
+Fixed loading modal getting stuck on startup sometimes. Fixed wrong mouse coordinates
+issues that happened in some situations. Improved initial loading of web app. Added collapsible
+and scrollable sidebar, changed “null” to blank in shortcuts. Fixed app stalling on clicking “About
+Pd-L2ork” menu option.
+
+## GSoC Contributions
+Here is a list of important PRs and commits made for GSoC:
+View all my merge requests here
+● (#807) Fixed padding of marks in console find
+● (#806) Fixed loading modal getting stuck
+● (#805) Removed Web MIDI error alert on startup
+● (#804) Fixed console head layout
+● (#803) Changed shortcut keys fir Edit mode and Cut
+● (#802) Removed full screen option
+● (#793) Improved preferences layout
+● (#800) Fix shortcut when creating objects
+● (#790) Improved properties layout
+● (#784) Improved scrollbar appearance
+● (#789) Added dialog for sending messages
+● (#788) Added rearrangeable canvas
+● (#787) Added close button in canvas
+● (#785) Shortcuts work depending on the device platform
+● (#783) Remove view menu option from global menu
+● (#779) Added open only supported file type features
+● (#773) Implemented tooltip feature
+● (#770) Added copy feature in console
+● (#767) Added traversing feature to console find
+● (#765) Fixed app stalling on clicking “About Pd-L2ork”
+● (#786) Added rename and delete files feature
+● (#741) Added full screen feature
+● (#758, #759, #760) Added default browser zoom in, zoom out, zoom reset
+● (#713) Fixed all matches showing when “Highlight All” is not selected
+● (#730) Improved animation of rotate icon
+● (#712, #711) Added round borders and shadows to menus.
+● (#720) Fixed scroll bug in Firefox
+● (#680) Added truncate file name feature
+● (#669) Added separate scrolling of each canvas
+● and many more… 
 
 ## Setup
 
@@ -65,22 +116,6 @@ git clone https://git.purrdata.net/jwilkes/purr-data.git
 cd purr-data
 git checkout emscripten
 make emscripten
-```
-### Setting up the project (Windows)
-```
-Method 1
-
-- git clone https://git.purrdata.net/jwilkes/purr-data.git
-- cd purr-data
-- run command npm install.
-- Change directory to purr-data/emscripten/project/purr-data.
-- run command npm run build.
-- run command npm start.
-
-Method 2
-
-- Follow the steps given in the link inorder to install Ubuntu LTS (https://docs.microsoft.com/en-us/windows/wsl/) .
-- Then follow the steps mentioned in above sections for Linux.
 ```
 ### Running Purr Data in a web browser
 - After the building is successfully completed, visit http://localhost:5000 in your browser.
